@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+- '7'
+branches:
+  only:
+  - master
+env:
+  global:
+  - secure: HezCW99InACFGvoIqYQ5EjVxghznXW7HJaUmjDlreZBFuTttLvN5Mz/DZUPGBi3EXijaA42F5c7v5Xysg8MGHEhVmvBplz86r4vXIKKlAfYFz+K+FvuEmnohebHUVeqKSo+PY2YAg1rqzlvhotO6sDiAU8LjxCuAPT1jvxFdgc15Y9mEcyEGcYY+1SJlHnuWSnarbKB3mX5qVVusQBrTsfv2eGK5SK5LH3LTJpNoOeFYWjpr7n8ZPjtACN5R7b7r6nldtkF+JDS0Iq+eFtfzxvyugSlZLBSyZFETRE8PgHPygvzy0uqlFgBLxkVqUo2lcDeZubg0WvCFxFIPkNbNJbdu2SshrJZHwlVVESrT7+VtKb9B1iVDWgBIC9NQYSlSXgghvKq1D8J1elnfZnplb6vcZfprWMilng0fEvd8j/JRZ5aAkQodXyUc/Q4WGvKSsEDHkgtUR3Nfc8imjw0BDrhmd7QYrc1yVG+hF08VTprloYv5fMr1wraAYkjJEsErRe9RH187zMJ813VGI2ezacgWvqs7tCMDtMt6GP3xILZynfFyzohkQehOf1KNjiKzdERTANDt0gR+IAy2s2u8SLNy3A/v/gq2lzy4ynq8KpS/szaH+A6Y1qjfzjJlI9pOejqUY3DFBI+RGghewE22+5365HBQaycod++7mfm9E4k=
+before_install:
+- export TZ='Asia/Shanghai'
+- npm install -g hexo
+- npm install -g hexo-cli
+before_script:
+- git config --global user.name "owen-carter"
+- git config --global user.email owenjiao@outlook.com
+- sed -i'' "s~git@github.com:owen-carter/owen-carter.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/owen-carter/owen-carter.github.io.git~"
+  _config.yml
+install:
+- npm install
+script:
+- hexo clean
+- hexo generate
+after_success:
+- hexo deploy
