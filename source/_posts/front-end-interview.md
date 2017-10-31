@@ -14,7 +14,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
   > sessionStorage和localStorage各自独立的存储空间
 
 + 如何实现浏览器内多个标签页之间的通信? 
-  > 调用localstorge、cookies等本地存储方式
+  > 调用localStorage、cookies等本地存储方式
 + css 块级元素  a
   > div,p,h1,form,ul,li;
 
@@ -51,7 +51,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 + ajax请求时，如何解释json数据?
   > 使用eval parse,鉴于安全性考虑 使用parse更靠谱;
-  
+   
 + 事件委托是什么?
   > 让利用事件冒泡的原理，让自己的所触发的事件，让他的父元素代替执行！
   
@@ -91,7 +91,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
     function stopBubble(e)
     {
         if (e && e.stopPropagation)
-            e.stopPropagation()
+            e.stopPropagation();
         else
             window.event.cancelBubble=true
     }
@@ -237,5 +237,5 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 　　从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。
 
 
-
-
++ 什么是promise？
+  
